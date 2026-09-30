@@ -51,3 +51,4 @@ automáticamente una validación de sintaxis del código Python mediante:
 python -m py_compile Taller8.py
 ##  Autor
 * **Desarrollador / Ingeniero en curso:** Fernando (Proyecto Académico - Metodologías y Requerimientos de Software).
+Prueba de integración continua solo prueba de cambio de git.
