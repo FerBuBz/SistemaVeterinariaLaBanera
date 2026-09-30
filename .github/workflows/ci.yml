@@ -1,0 +1,23 @@
+name: Validación del proyecto
+
+on:
+  push:
+    branches:
+      - main
+      - feature/documentacion-talleres
+
+jobs:
+  validar-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verificar sintaxis de Python
+        run: python -m py_compile Taller8.py
