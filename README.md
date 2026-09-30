@@ -1,22 +1,53 @@
 # Sistema de Gestión Informática — Veterinaria "La Bañera"
 
-##  Descripción del Proyecto
-"La Bañera" es un sistema informático diseñado para optimizar la gestión integral de una veterinaria. Permite administrar de manera organizada el registro de clientes (dueños) y mascotas, el control de pesos e historiales clínicos, y el agendamiento y seguimiento de citas médicas bajo una arquitectura robusta y trazable.
+## Descripción del Proyecto
 
-##  Módulos y Funcionalidades Principales (Requerimientos Funcionales - RF)
-* **RF-01 y RF-02:** Registro de mascotas con validación estricta de datos numéricos (impedir edades o pesos negativos).
-* **RF-03 y RF-04:** Control evolutivo del peso e historial clínico de las atenciones.
-* **RF-05 y RF-06:** Registro, vinculación y búsqueda de clientes (dueños) con múltiples mascotas asociadas.
-* **RF-07 y RF-09:** Agendamiento, control y actualización de estados de citas médicas.
+"La Bañera" es un sistema básico de gestión para una veterinaria, desarrollado en Python. 
+Permite registrar clientes y sus mascotas, validar datos básicos, actualizar el peso, 
+registrar atenciones clínicas, consultar el historial clínico y gestionar el 
+agendamiento de citas médicas.
 
-##  Requisitos No Funcionales (RNF)
-* **RNF-01 (Rendimiento):** El sistema debe responder a las consultas de historial clínico en un tiempo menor a 2 segundos.
-* **RNF-02 (Seguridad):** Control de acceso basado en roles (Recepcionista y Veterinario).
+El proyecto utiliza Git y GitHub para el control de versiones e incorpora una práctica 
+básica de integración continua mediante GitHub Actions y un Dockerfile para preparar 
+un entorno reproducible de ejecución.
 
-## Tecnologías Aplicadas
-* **Control de versiones:** Git y GitHub.
-* **Metodología de desarrollo:** Ágil (Scrum adaptado, Sprints, Product Backlog priorizado mediante escala Fibonacci).
-* **Entorno de desarrollo:** Visual Studio Code.
+## Funcionalidades Principales
 
+- Registro de clientes con nombre, documento y teléfono.
+- Validación de clientes duplicados mediante el número de documento.
+- Registro de mascotas asociadas a un cliente.
+- Validación de nombre y raza de la mascota.
+- Validación de edad y peso mediante valores mayores que cero.
+- Consulta y listado de mascotas registradas.
+- Actualización del peso de una mascota.
+- Registro de atenciones clínicas mediante motivo y diagnóstico.
+- Consulta del historial clínico de una mascota.
+- Agendamiento de citas indicando mascota, fecha y hora.
+- Consulta y listado de las citas agendadas.
+
+## Requerimientos Funcionales Implementados
+
+- **RF-01 y RF-02:** Registro de mascotas y validación de los datos numéricos de edad y peso.
+- **RF-03:** Actualización del peso de las mascotas.
+- **RF-04:** Registro y consulta del historial de atenciones clínicas.
+- **RF-05 y RF-06:** Registro de clientes y asociación de mascotas con sus respectivos dueños.
+- **RF-07 y RF-09:** Registro y consulta de citas médicas.
+
+## Requisitos No Funcionales
+
+- **RNF-01 (Rendimiento):** El sistema permite realizar consultas del historial clínico mediante 
+  estructuras de datos en memoria.
+- **RNF-02 (Seguridad):** No se implementa control de acceso mediante roles en la versión actual 
+  del sistema.
+
+## Integración Continua
+
+El proyecto incorpora un flujo básico de Integración Continua mediante GitHub Actions.
+
+Después de cada envío de cambios (`push`) a las ramas configuradas, GitHub ejecuta 
+automáticamente una validación de sintaxis del código Python mediante:
+
+```bash
+python -m py_compile Taller8.py
 ##  Autor
-* **Desarrollador / Ingeniero:** Fernando (Proyecto Académico - Metodologías y Requerimientos de Software).
+* **Desarrollador / Ingeniero en curso:** Fernando (Proyecto Académico - Metodologías y Requerimientos de Software).
