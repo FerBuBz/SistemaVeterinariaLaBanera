@@ -21,3 +21,10 @@ jobs:
 
       - name: Verificar sintaxis de Python
         run: python -m py_compile Taller8.py
+
+      - name: Construir imagen Docker
+        run: docker build -t veterinaria-labanera:ci .
+
+      - name: Ejecutar contenedor Docker
+        run: printf "0\n" | docker run --rm -i veterinaria-labanera:ci
+ 
